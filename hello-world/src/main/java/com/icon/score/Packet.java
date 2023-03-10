@@ -13,8 +13,8 @@ public class Packet {
     public String sourceChannel;
     public String destinationPort;
     public String destinationChannel;
-    public byte[] data;
     public Height height;
+    public byte[] data;
     public BigInteger timestamp; 
 
     public static void writeObject(ObjectWriter writer, Packet obj) {
