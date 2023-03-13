@@ -118,10 +118,16 @@ public class HelloWorld {
     }
 
     @External
-    public void btpMessage() {
-        Context.call(systemAddress, "sendBTPMessage", networkId.get(), new byte[1]);
+    public void sendBTPMessageWithBytes(byte[] message) {
+        SendPacket(message);
+        Context.call(systemAddress, "sendBTPMessage", networkId.get(), message);
     }
 
+    @External
+    public void sendBTPMessage() {
+        SendPacket(new byte[0] );
+        Context.call(systemAddress, "sendBTPMessage", networkId.get(), new byte[0]);
+    }
 
 
     @Payable
