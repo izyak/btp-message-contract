@@ -18,6 +18,7 @@ public class Height {
     }
 
     public void writeObject(ObjectWriter writer) {
+        writer.beginList(2);
         writer.write(this.revisionHeight);
         writer.write(this.revisionNumber);
         writer.end();

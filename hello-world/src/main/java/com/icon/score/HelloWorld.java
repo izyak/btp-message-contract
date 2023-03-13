@@ -34,6 +34,11 @@ public class HelloWorld {
     }
 
     @External
+    public void setNetworkId(BigInteger nid) {
+        networkId.set(nid);
+    }
+
+    @External
     public void sendPacket() {
 
         Packet pkt = new Packet();
