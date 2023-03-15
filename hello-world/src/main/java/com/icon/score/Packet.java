@@ -13,8 +13,8 @@ public class Packet {
     public String sourceChannel;
     public String destinationPort;
     public String destinationChannel;
-    public Height height;
     public byte[] data;
+    public Height height;
     public BigInteger timestamp; 
 
     public static void writeObject(ObjectWriter writer, Packet obj) {
@@ -28,8 +28,8 @@ public class Packet {
         writer.write(this.sourceChannel);
         writer.write(this.destinationPort);
         writer.write(this.destinationChannel);
-        writer.write(this.height);
         writer.write(this.data);
+        writer.write(this.height);
         writer.write(this.timestamp);
         writer.end();
     }
@@ -42,8 +42,8 @@ public class Packet {
         obj.sourceChannel = reader.readString();
         obj.destinationPort = reader.readString();
         obj.destinationChannel = reader.readString();
-        obj.height = reader.read(Height.class);
         obj.data = reader.readByteArray();
+        obj.height = reader.read(Height.class);
         obj.timestamp = reader.readBigInteger();
         reader.end();
         return obj; 
