@@ -9,8 +9,8 @@ import score.ObjectWriter;
 
 
 public class Height {
-    public BigInteger revisionHeight;
     public BigInteger revisionNumber;
+    public BigInteger revisionHeight;
 
 
     public static void writeObject(ObjectWriter writer, Height obj) {
@@ -19,16 +19,16 @@ public class Height {
 
     public void writeObject(ObjectWriter writer) {
         writer.beginList(2);
-        writer.write(this.revisionHeight);
         writer.write(this.revisionNumber);
+        writer.write(this.revisionHeight);
         writer.end();
     }
 
     public static Height readObject(ObjectReader reader) {
         Height obj = new Height();
         reader.beginList();
-        obj.revisionHeight = reader.readBigInteger();
         obj.revisionNumber = reader.readBigInteger();
+        obj.revisionHeight = reader.readBigInteger();
         reader.end();
         return obj; 
     }
